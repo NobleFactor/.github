@@ -1,0 +1,18 @@
+name: Triage
+on:
+  issues:
+    types: [opened, transferred]
+jobs:
+  add-to-triage:
+    runs-on: ubuntu-latest
+    steps:
+      - id: token
+        uses: actions/create-github-app-token@v3.3.0
+        with:
+          app-id: ${{ secrets.NOBLEFACTOR_AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.NOBLEFACTOR_AUTOMATION_APP_PRIVATE_KEY }}
+          owner: NobleFactor
+      - uses: actions/add-to-project@v2.0.0
+        with:
+          project-url: ${{ vars.TRIAGE_PROJECT_URL }}
+          github-token: ${{ steps.token.outputs.token }}
