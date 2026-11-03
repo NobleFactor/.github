@@ -1,0 +1,22 @@
+name: CI
+
+# The job name must stay `quality-gate`: organization ruleset 12426847 requires that check on the default branch.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - name: Every YAML and JSON file parses
+        run: |
+          find . -path ./.git -prune -o \( -name '*.yml' -o -name '*.yaml' -o -name '*.json' \) -print0 |
+            xargs -0 -r ruby -ryaml -rjson -e '
+              ARGV.each do |f|
+                f.end_with?(".json") ? JSON.parse(File.read(f)) : YAML.load_file(f)
+                puts "parses: #{f}"
+              end'
