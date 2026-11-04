@@ -1,0 +1,33 @@
+name: Feature
+description: A capability for the product or for engineering; decomposes into tasks and bugs
+type: Feature
+body:
+- type: dropdown
+  id: area
+  attributes:
+    label: Area
+    description: Is this issue's own work product or engineering?
+    options:
+    - Product
+    - Engineering
+  validations:
+    required: true
+- type: textarea
+  id: what
+  attributes:
+    label: What
+    description: The capability, and the epic it belongs to.
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence of completion
+    description: What a comment on this issue will show before it closes.
+  validations:
+    required: true
+- type: textarea
+  id: documents
+  attributes:
+    label: Plan and design documents
+    description: The plan, if one is opened, and the design documents this bears on.
