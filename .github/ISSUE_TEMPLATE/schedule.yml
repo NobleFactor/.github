@@ -1,0 +1,35 @@
+name: Schedule
+description: 'Describes a schedule: its deliverable and its exit criteria'
+type: Schedule
+body:
+- type: dropdown
+  id: area
+  attributes:
+    label: Area
+    description: Is this issue's own work product or engineering?
+    options:
+    - Product
+    - Engineering
+  validations:
+    required: true
+- type: textarea
+  id: what
+  attributes:
+    label: Deliverable
+    description: What the schedule delivers.
+  validations:
+    required: true
+- type: textarea
+  id: exit
+  attributes:
+    label: Exit criteria
+    description: How we'll know it's finished.
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence of completion
+    description: What a comment on this issue will show before it closes.
+  validations:
+    required: true
