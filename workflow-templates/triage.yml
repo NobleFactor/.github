@@ -16,3 +16,18 @@ jobs:
         with:
           project-url: ${{ vars.TRIAGE_PROJECT_URL }}
           github-token: ${{ steps.token.outputs.token }}
+      - name: Copy the form's Area into the Area field
+        env:
+          GH_TOKEN: ${{ steps.token.outputs.token }}
+          BODY: ${{ github.event.issue.body }}
+          ISSUE: ${{ github.event.issue.node_id }}
+        run: |
+          area=$(printf '%s\n' "$BODY" | awk '/^### Area[[:space:]]*$/ { getline; while ($0 ~ /^[[:space:]]*$/) getline; print; exit }')
+          [ -n "$area" ] || { echo "No Area in the form: the Triage project's Missing Area view will show it."; exit 0; }
+          fields=$(gh api graphql -f query='query { organization(login: "NobleFactor") { issueFields(first: 30) { nodes { ... on IssueFieldSingleSelect { id name options { id name } } } } } }')
+          fid=$(jq -r '.data.organization.issueFields.nodes[] | select(.name == "Area") | .id' <<<"$fields")
+          oid=$(jq -r --arg a "$area" '.data.organization.issueFields.nodes[] | select(.name == "Area") | .options[] | select(.name == $a) | .id' <<<"$fields")
+          [ -n "$oid" ] || { echo "Area '$area' is not one of the field's options."; exit 0; }
+          gh api graphql -f query='mutation($i: ID!, $f: ID!, $o: ID!) { setIssueFieldValue(input: {issueId: $i, issueFields: [{fieldId: $f, singleSelectOptionId: $o}]}) { clientMutationId } }' \
+            -f i="$ISSUE" -f f="$fid" -f o="$oid" >/dev/null
+          echo "Area: $area"
