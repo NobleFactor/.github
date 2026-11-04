@@ -1,0 +1,28 @@
+name: Scenario
+description: 'Describes a scenario: the story its features tell'
+type: Scenario
+body:
+- type: dropdown
+  id: area
+  attributes:
+    label: Area
+    description: Is this issue's own work product or engineering?
+    options:
+    - Product
+    - Engineering
+  validations:
+    required: true
+- type: textarea
+  id: what
+  attributes:
+    label: The story
+    description: The use case, told as the steps a person takes.
+  validations:
+    required: true
+- type: textarea
+  id: evidence
+  attributes:
+    label: Evidence of completion
+    description: What a comment on this issue will show before it closes.
+  validations:
+    required: true
