@@ -12,11 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
+      # A safe load that permits dates and times, the same on every Ruby: from Ruby 3.1, YAML.load_file is a safe load
+      # that refuses a YAML timestamp, such as model.yaml's pulled.at, while older Rubies load anything.
       - name: Every YAML and JSON file parses
         run: |
           find . -path ./.git -prune -o \( -name '*.yml' -o -name '*.yaml' -o -name '*.json' \) -print0 |
-            xargs -0 -r ruby -ryaml -rjson -e '
+            xargs -0 -r ruby -rdate -ryaml -rjson -e '
               ARGV.each do |f|
-                f.end_with?(".json") ? JSON.parse(File.read(f)) : YAML.load_file(f)
+                f.end_with?(".json") ? JSON.parse(File.read(f)) : YAML.safe_load(File.read(f), permitted_classes: [Date, Time])
                 puts "parses: #{f}"
               end'
