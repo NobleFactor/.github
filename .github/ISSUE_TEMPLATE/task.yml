@@ -31,3 +31,9 @@ body:
   attributes:
     label: Plan and design documents
     description: The plan, if one is opened, and the design documents this bears on.
+    value: |
+      | Document | Link |
+      | --- | --- |
+      | Plan | Not yet opened |
+  validations:
+    required: true
