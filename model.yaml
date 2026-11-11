@@ -1,86 +1,269 @@
 account: NobleFactor
 fields:
-  - id: IFSS_kgDOAAf67A
+  - database_id: "522988"
+    description: Current importance level assigned to this issue
+    id: IFSS_kgDOAAf67A
     name: Priority
     options:
-      - id: IFSSO_kgDOAA3iKw
+      - color: PINK
+        database_id: 909867
+        description: ""
+        id: IFSSO_kgDOAA3iKw
         name: Urgent
-      - id: IFSSO_kgDOAA3iLA
+        priority: 1
+      - color: RED
+        database_id: 909868
+        description: ""
+        id: IFSSO_kgDOAA3iLA
         name: High
-      - id: IFSSO_kgDOAA3iLQ
+        priority: 2
+      - color: YELLOW
+        database_id: 909869
+        description: ""
+        id: IFSSO_kgDOAA3iLQ
         name: Medium
-      - id: IFSSO_kgDOAA3iLg
+        priority: 3
+      - color: GREEN
+        database_id: 909870
+        description: ""
+        id: IFSSO_kgDOAA3iLg
         name: Low
+        priority: 4
     type: single-select
-  - id: IFD_kgDOAAf67Q
+    visibility: ORG_ONLY
+  - database_id: "522989"
+    description: Date when work on issue will begin
+    id: IFD_kgDOAAf67Q
     name: Start date
     type: date
-  - id: IFD_kgDOAAf67g
+    visibility: ORG_ONLY
+  - database_id: "522990"
+    description: Expected completion date for this issue
+    id: IFD_kgDOAAf67g
     name: Target date
     type: date
-  - id: IFSS_kgDOAAf67w
+    visibility: ORG_ONLY
+  - database_id: "522991"
+    description: Relative level of effort for completing this issue
+    id: IFSS_kgDOAAf67w
     name: Effort
     options:
-      - id: IFSSO_kgDOAA3iLw
+      - color: RED
+        database_id: 909871
+        description: ""
+        id: IFSSO_kgDOAA3iLw
         name: High
-      - id: IFSSO_kgDOAA3iMA
+        priority: 1
+      - color: YELLOW
+        database_id: 909872
+        description: ""
+        id: IFSSO_kgDOAA3iMA
         name: Medium
-      - id: IFSSO_kgDOAA3iMQ
+        priority: 2
+      - color: GREEN
+        database_id: 909873
+        description: ""
+        id: IFSSO_kgDOAA3iMQ
         name: Low
+        priority: 3
     type: single-select
-  - id: IFSS_kgDOAvIUWw
+    visibility: ORG_ONLY
+  - database_id: "49419355"
+    description: Why a closed issue was closed when its work was not done
+    id: IFSS_kgDOAvIUWw
     name: Resolution
     options:
-      - id: IFSSO_kgDOBSg53g
+      - color: GRAY
+        database_id: 86522334
+        description: The work was declined
+        id: IFSSO_kgDOBSg53g
         name: Declined
-      - id: IFSSO_kgDOBSg53w
+        priority: 1
+      - color: GRAY
+        database_id: 86522335
+        description: Another issue covers it
+        id: IFSSO_kgDOBSg53w
         name: Duplicate
-      - id: IFSSO_kgDOBSg54A
+        priority: 2
+      - color: GRAY
+        database_id: 86522336
+        description: Not a real problem, or filed in the wrong place
+        id: IFSSO_kgDOBSg54A
         name: Invalid
+        priority: 3
     type: single-select
-  - id: IFSS_kgDOAvJV0w
+    visibility: ORG_ONLY
+  - database_id: "49436115"
+    description: Whether an issue's own work is product or engineering
+    id: IFSS_kgDOAvJV0w
     name: Area
     options:
-      - id: IFSSO_kgDOBSisgg
+      - color: BLUE
+        database_id: 86551682
+        description: User-facing features, capabilities, or functional components released from this repository
+        id: IFSSO_kgDOBSisgg
         name: Product
-      - id: IFSSO_kgDOBSisgw
+        priority: 1
+      - color: GREEN
+        database_id: 86551683
+        description: Design artifacts, technical specs, internal infrastructure, testing, and executing development plans
+        id: IFSSO_kgDOBSisgw
         name: Engineering
+        priority: 2
     type: single-select
-  - id: IFSS_kgDOAvJiQQ
+    visibility: ORG_ONLY
+  - database_id: "49439297"
+    description: What the impact is if this fires
+    id: IFSS_kgDOAvJiQQ
     name: Severity
     options:
-      - id: IFSSO_kgDOBSjCQw
+      - color: RED
+        database_id: 86557251
+        description: Data loss, corruption, or a security failure
+        id: IFSSO_kgDOBSjCQw
         name: Critical
-      - id: IFSSO_kgDOBSjCRA
+        priority: 1
+      - color: ORANGE
+        database_id: 86557252
+        description: A supported path is broken with no workaround
+        id: IFSSO_kgDOBSjCRA
         name: High
-      - id: IFSSO_kgDOBSjCRQ
+        priority: 2
+      - color: YELLOW
+        database_id: 86557253
+        description: Broken with a workaround, or a narrow path
+        id: IFSSO_kgDOBSjCRQ
         name: Medium
-      - id: IFSSO_kgDOBSjCRg
+        priority: 3
+      - color: GREEN
+        database_id: 86557254
+        description: Cosmetic, or a defect nobody is hitting
+        id: IFSSO_kgDOBSjCRg
         name: Low
-      - id: IFSSO_kgDOBSqVvQ
+        priority: 4
+      - color: GRAY
+        database_id: 86676925
+        description: 'Not applicable: the issue is not a bug'
+        id: IFSSO_kgDOBSqVvQ
         name: N/A
+        priority: 5
     type: single-select
+    visibility: ORG_ONLY
 labels:
   organization: []
   repositories:
-    NobleFactor/noblefactor-engprod:
-      - color: fbca04
-        description: Business priority
-        name: business
+    NobleFactor/.github:
       - color: 0075ca
         description: Improvements or additions to documentation
+        id: LA_kwDOVhE4vs8AAAADAz2NrQ
         name: documentation
       - color: a2eeef
         description: New feature or request
+        id: LA_kwDOVhE4vs8AAAADAz2N1A
         name: enhancement
       - color: 7057ff
         description: Good for newcomers
+        id: LA_kwDOVhE4vs8AAAADAz2N6w
         name: good first issue
       - color: "008672"
         description: Extra attention is needed
+        id: LA_kwDOVhE4vs8AAAADAz2OAA
         name: help wanted
       - color: d876e3
         description: Further information is requested
+        id: LA_kwDOVhE4vs8AAAADAz2OJg
+        name: question
+    NobleFactor/devlore-cli:
+      - color: fbca04
+        description: Business priority
+        id: LA_kwDOQ6A7y88AAAACX7ajYw
+        name: business
+      - color: 0075ca
+        description: Improvements or additions to documentation
+        id: LA_kwDOQ6A7y88AAAACU8VxBw
+        name: documentation
+      - color: a2eeef
+        description: New feature or request
+        id: LA_kwDOQ6A7y88AAAACU8VxDQ
+        name: enhancement
+      - color: 7057ff
+        description: Good for newcomers
+        id: LA_kwDOQ6A7y88AAAACU8VxEA
+        name: good first issue
+      - color: "008672"
+        description: Extra attention is needed
+        id: LA_kwDOQ6A7y88AAAACU8VxEw
+        name: help wanted
+      - color: d876e3
+        description: Further information is requested
+        id: LA_kwDOQ6A7y88AAAACU8VxFw
+        name: question
+    NobleFactor/devlore-registry:
+      - color: 0075ca
+        description: Improvements or additions to documentation
+        id: LA_kwDOQ4u_2M8AAAACUwlSog
+        name: documentation
+      - color: a2eeef
+        description: New feature or request
+        id: LA_kwDOQ4u_2M8AAAACUwlSqg
+        name: enhancement
+      - color: 7057ff
+        description: Good for newcomers
+        id: LA_kwDOQ4u_2M8AAAACUwlSrQ
+        name: good first issue
+      - color: "008672"
+        description: Extra attention is needed
+        id: LA_kwDOQ4u_2M8AAAACUwlStA
+        name: help wanted
+      - color: d876e3
+        description: Further information is requested
+        id: LA_kwDOQ4u_2M8AAAACUwlSvw
+        name: question
+    NobleFactor/devlore.noblefactor.com:
+      - color: 0075ca
+        description: Improvements or additions to documentation
+        id: LA_kwDOQ3_x_s8AAAACUp0APQ
+        name: documentation
+      - color: a2eeef
+        description: New feature or request
+        id: LA_kwDOQ3_x_s8AAAACUp0AQg
+        name: enhancement
+      - color: 7057ff
+        description: Good for newcomers
+        id: LA_kwDOQ3_x_s8AAAACUp0ASA
+        name: good first issue
+      - color: "008672"
+        description: Extra attention is needed
+        id: LA_kwDOQ3_x_s8AAAACUp0ASw
+        name: help wanted
+      - color: d876e3
+        description: Further information is requested
+        id: LA_kwDOQ3_x_s8AAAACUp0AVA
+        name: question
+    NobleFactor/noblefactor-engprod:
+      - color: fbca04
+        description: Business priority
+        id: LA_kwDOQ63LSc8AAAACX7ahFA
+        name: business
+      - color: 0075ca
+        description: Improvements or additions to documentation
+        id: LA_kwDOQ63LSc8AAAACVEHT2Q
+        name: documentation
+      - color: a2eeef
+        description: New feature or request
+        id: LA_kwDOQ63LSc8AAAACVEHT4Q
+        name: enhancement
+      - color: 7057ff
+        description: Good for newcomers
+        id: LA_kwDOQ63LSc8AAAACVEHT5g
+        name: good first issue
+      - color: "008672"
+        description: Extra attention is needed
+        id: LA_kwDOQ63LSc8AAAACVEHT6w
+        name: help wanted
+      - color: d876e3
+        description: Further information is requested
+        id: LA_kwDOQ63LSc8AAAACVEHT8Q
         name: question
   teams: {}
 projects:
@@ -88,11 +271,17 @@ projects:
       - id: PVTSSF_lADOAD1Dfc4BpxN-zhoLRh0
         name: Status
         options:
-          - id: ba4e0e54
+          - color: GRAY
+            description: The issue is open
+            id: ba4e0e54
             name: Open
-          - id: fd5cef35
+          - color: YELLOW
+            description: Someone is working on the issue
+            id: fd5cef35
             name: In progress
-          - id: 470096a0
+          - color: PURPLE
+            description: The issue is closed; closed is not done until the record says so
+            id: 470096a0
             name: Closed
         type: single-select
       - id: PVTF_lADOAD1Dfc4BpxN-zhoLRj8
@@ -101,18 +290,34 @@ projects:
       - id: PVTF_lADOAD1Dfc4BpxN-zhobwBg
         name: Worktree
         type: text
-      - id: PVTIF_lADOAD1Dfc4BpxN-zhoeMvk
+      - configuration:
+          duration: 14
+          start_day: 1
+        id: PVTIF_lADOAD1Dfc4BpxN-zhoeMvk
         name: Iteration
         type: iteration
       - id: PVTSSF_lADOAD1Dfc4BpxN-zhofxMY
         name: Schedule
         options:
-          - id: 53aae37d
+          - color: GRAY
+            description: NobleFactor/noblefactor-engprod#443
+            id: 53aae37d
             name: placeholder
         type: single-select
     id: PVT_kwDOAD1Dfc4BpxN-
     name: Schedule
     number: 7
+    public: false
+    readme: |-
+      A team's Schedule project holds its committed tasks and bugs.
+
+      - The Schedule field names the schedule each row belongs to: one option per schedule, named for its Schedule issue, which holds the schedule's deliverable and exit criteria.
+      - Step orders the rows within a schedule. A Schedule issue's own row has no step.
+      - Iteration gives each row its sprint.
+      - Status is Open, In progress or Closed. Worktree links a step to the branch its work is on.
+    repositories: []
+    short_description: 'The organization''s Schedule template: copy it to make a team''s Schedule project'
+    teams: []
     template: true
     views:
       - fields:
@@ -149,11 +354,17 @@ projects:
       - id: PVTSSF_lADOAD1Dfc4BpxOBzhoLRlI
         name: Status
         options:
-          - id: 8d4a9acd
+          - color: GRAY
+            description: The issue is open
+            id: 8d4a9acd
             name: Open
-          - id: 7c9852e3
+          - color: YELLOW
+            description: Someone is working on the issue
+            id: 7c9852e3
             name: In progress
-          - id: a4f6d48d
+          - color: PURPLE
+            description: The issue is closed; closed is not done until the record says so
+            id: a4f6d48d
             name: Closed
         type: single-select
       - id: PVTF_lADOAD1Dfc4BpxOBzhoLRoE
@@ -162,12 +373,24 @@ projects:
       - id: PVTSSF_lADOAD1Dfc4BpxOBzhofuz4
         name: Scenario
         options:
-          - id: 2ac96d3e
+          - color: GRAY
+            description: NobleFactor/noblefactor-engprod#442
+            id: 2ac96d3e
             name: placeholder
         type: single-select
     id: PVT_kwDOAD1Dfc4BpxOB
     name: Scenario
     number: 8
+    public: false
+    readme: |-
+      A team's Scenario project holds its features.
+
+      - The Scenario field names the scenario each row belongs to: one option per scenario, named for its Scenario issue, which tells the story.
+      - Beat orders the rows within a scenario.
+      - Status is Open, In progress or Closed.
+    repositories: []
+    short_description: 'The organization''s Scenario template: copy it to make a team''s Scenario project'
+    teams: []
     template: true
     views:
       - fields:
@@ -202,20 +425,38 @@ projects:
       - id: PVTSSF_lADOAD1Dfc4Bp9W_zhoWkdA
         name: Status
         options:
-          - id: dc6fec11
+          - color: GRAY
+            description: The issue is open
+            id: dc6fec11
             name: Open
-          - id: 83cff555
+          - color: YELLOW
+            description: Someone is working on the issue
+            id: 83cff555
             name: In progress
-          - id: c11622a4
+          - color: PURPLE
+            description: The issue is closed. Closed does not always mean done
+            id: c11622a4
             name: Closed
         type: single-select
       - id: PVTSSF_lADOAD1Dfc4Bp9W_zhoe9lw
+        issue_field: true
         name: Area
         options: []
         type: single-select
     id: PVT_kwDOAD1Dfc4Bp9W_
     name: Triage
     number: 23
+    public: false
+    readme: |-
+      A Triage project is a team's queue of issues waiting to be classified. See the issue data model, section 3: https://github.com/NobleFactor/noblefactor-engprod/blob/develop/docs/architecture/issue-data-model/3-collections.md
+
+      - Each team has one Triage project, copied from this template. A user account has one too.
+      - Any issue can be a row, of any type or none. The rows have no order and no step numbers: this is a queue, worked and emptied.
+      - A row leaves the queue once its issue is fully classified, or closed with a reason.
+      - Status is Open, In progress or Closed.
+    repositories: []
+    short_description: 'The organization''s Triage template: copy it to make a team''s Triage project'
+    teams: []
     template: true
     views:
       - fields:
@@ -250,20 +491,35 @@ projects:
       - id: PVTSSF_lADOAD1Dfc4BqFiLzhoeMv8
         name: Status
         options:
-          - id: fa8b3d98
+          - color: GRAY
+            description: The issue is open
+            id: fa8b3d98
             name: Open
-          - id: 2754212f
+          - color: YELLOW
+            description: Someone is working on the issue
+            id: 2754212f
             name: In progress
-          - id: 63b7fbe5
+          - color: PURPLE
+            description: The issue is closed. Closed does not always mean done
+            id: 63b7fbe5
             name: Closed
         type: single-select
       - id: PVTSSF_lADOAD1Dfc4BqFiLzhoeMzE
+        issue_field: true
         name: Priority
         options: []
         type: single-select
     id: PVT_kwDOAD1Dfc4BqFiL
     name: Backlog
     number: 24
+    public: false
+    readme: |-
+      A team's Backlog project holds work that triage accepted and that isn't scheduled yet, ordered by priority.
+
+      - Status is Open, In progress or Closed.
+    repositories: []
+    short_description: 'The organization''s Backlog template: copy it to make a team''s Backlog project'
+    teams: []
     template: true
     views:
       - fields:
@@ -297,51 +553,92 @@ projects:
             field: Priority
         vertical_group_by: []
 teams:
-  - id: T_kwDOAD1Dfc4BNErH
+  - description: 'DevLore: the devlore product; owns devlore-cli, devlore-registry and devlore.noblefactor.com'
+    id: T_kwDOAD1Dfc4BNErH
     name: DevLore
+    notification_setting: notifications_enabled
+    parent: null
+    privacy: closed
     repositories:
       - NobleFactor/devlore-cli
       - NobleFactor/devlore-registry
       - NobleFactor/devlore.noblefactor.com
+    roles:
+      NobleFactor/devlore-cli: maintain
+      NobleFactor/devlore-registry: maintain
+      NobleFactor/devlore.noblefactor.com: maintain
+      NobleFactor/noblefactor-engprod: write
     slug: devlore
-  - id: T_kwDOAD1Dfc4BNb2P
+  - description: 'Engineering productivity: process and tooling; owns noblefactor-engprod'
+    id: T_kwDOAD1Dfc4BNb2P
     name: engprod
+    notification_setting: notifications_enabled
+    parent: null
+    privacy: closed
     repositories:
       - NobleFactor/.github
       - NobleFactor/noblefactor-engprod
+    roles:
+      NobleFactor/.github: maintain
+      NobleFactor/noblefactor-engprod: maintain
     slug: engprod
-  - id: MDQ6VGVhbTM3MTY5Nw==
+  - description: ""
+    id: MDQ6VGVhbTM3MTY5Nw==
     name: Owners
+    notification_setting: notifications_enabled
+    parent: null
+    privacy: secret
     repositories: []
+    roles: {}
     slug: owners
 types:
   - color: yellow
     description: 'Level 2: planned work, a step in delivering a feature'
+    enabled: true
     id: 344346
     level: 2
     name: Task
+    pinned_fields:
+      - Priority
+      - Effort
   - color: red
     description: 'Level 2: unplanned work, a defect found rather than planned; repairs a feature'
+    enabled: true
     id: 344348
     level: 2
     name: Bug
+    pinned_fields:
+      - Priority
+      - Effort
     unplanned: true
   - color: gray
     description: 'Level 1: a capability for the product or for engineering; decomposes into tasks and bugs'
+    enabled: true
     id: 344350
     level: 1
     name: Feature
+    pinned_fields:
+      - Priority
+      - Start date
+      - Target date
+      - Effort
   - color: gray
     description: 'Level 0: a body of work with an owner, the root work issues roll up to; decomposes into features'
+    enabled: true
     id: 914457658
     level: 0
     name: Epic
+    pinned_fields: []
   - color: blue
     description: 'Collection: describes a schedule, its deliverable and its exit criteria'
+    enabled: true
     id: 927956059
     name: Schedule
+    pinned_fields: []
   - color: purple
     description: 'Collection: describes a scenario, the story its features tell'
+    enabled: true
     id: 927956069
     name: Scenario
+    pinned_fields: []
 version: 1
