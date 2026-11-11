@@ -261,10 +261,6 @@ labels:
         description: Extra attention is needed
         id: LA_kwDOQ63LSc8AAAACVEHT6w
         name: help wanted
-      - color: ededed
-        description: 'A label for the proof of #437, removed when it ends'
-        id: LA_kwDOQ63LSc8AAAADCZKfsw
-        name: proof:437-renamed
       - color: d876e3
         description: Further information is requested
         id: LA_kwDOQ63LSc8AAAACVEHT8Q
@@ -597,7 +593,7 @@ teams:
     slug: owners
 types:
   - color: yellow
-    description: 'Level 2: planned work, a step in delivering a feature, changed for the proof of #437'
+    description: 'Level 2: planned work, a step in delivering a feature'
     enabled: true
     id: 344346
     level: 2
@@ -644,12 +640,5 @@ types:
     enabled: true
     id: 927956069
     name: Scenario
-    pinned_fields: []
-  - color: gray
-    description: 'Level 2: a proof of #437, removed when the proof ends'
-    enabled: true
-    id: 936952741
-    level: 2
-    name: Proof
     pinned_fields: []
 version: 1
