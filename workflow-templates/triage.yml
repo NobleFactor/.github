@@ -5,13 +5,14 @@ on:
 jobs:
   add-to-triage:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - id: token
         uses: actions/create-github-app-token@v3.3.0
         with:
           app-id: ${{ secrets.NOBLEFACTOR_AUTOMATION_APP_ID }}
           private-key: ${{ secrets.NOBLEFACTOR_AUTOMATION_APP_PRIVATE_KEY }}
-          owner: NobleFactor
+          owner: ${{ github.repository_owner }}
       - uses: actions/add-to-project@v2.0.0
         with:
           project-url: ${{ vars.TRIAGE_PROJECT_URL }}
@@ -22,9 +23,9 @@ jobs:
           BODY: ${{ github.event.issue.body }}
           ISSUE: ${{ github.event.issue.node_id }}
         run: |
-          area=$(printf '%s\n' "$BODY" | awk '/^### Area[[:space:]]*$/ { getline; while ($0 ~ /^[[:space:]]*$/) getline; print; exit }')
+          area=$(printf '%s\n' "$BODY" | tr -d '\r' | awk '/^### Area[[:space:]]*$/ { while ((getline line) > 0) if (line !~ /^[[:space:]]*$/) { print line; exit }; exit }')
           [ -n "$area" ] || { echo "No Area in the form: the Triage project's Missing Area view will show it."; exit 0; }
-          fields=$(gh api graphql -f query='query { organization(login: "NobleFactor") { issueFields(first: 30) { nodes { ... on IssueFieldSingleSelect { id name options { id name } } } } } }')
+          fields=$(gh api graphql -f query='query($login: String!) { organization(login: $login) { issueFields(first: 30) { nodes { ... on IssueFieldSingleSelect { id name options { id name } } } } } }' -f login="$GITHUB_REPOSITORY_OWNER")
           fid=$(jq -r '.data.organization.issueFields.nodes[] | select(.name == "Area") | .id' <<<"$fields")
           oid=$(jq -r --arg a "$area" '.data.organization.issueFields.nodes[] | select(.name == "Area") | .options[] | select(.name == $a) | .id' <<<"$fields")
           [ -n "$oid" ] || { echo "Area '$area' is not one of the field's options."; exit 0; }
