@@ -402,7 +402,7 @@ projects:
         filter: ""
         group_by: []
         layout: table
-        name: View 1
+        name: Default
         number: 1
         sort_by: []
         vertical_group_by: []
