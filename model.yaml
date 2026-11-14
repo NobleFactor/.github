@@ -636,7 +636,7 @@ types:
     name: Schedule
     pinned_fields: []
   - color: purple
-    description: 'Collection: describes a scenario, the story its features tell'
+    description: 'Collection: what someone wants to do, how to walk through it, and the features it uses'
     enabled: true
     id: 927956069
     name: Scenario
