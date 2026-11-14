@@ -1,5 +1,5 @@
 name: Scenario
-description: 'Describes a scenario: the story its features tell'
+description: 'A scenario: what someone wants to do, how to walk through it, and the features it uses'
 type: Scenario
 body:
 - type: dropdown
@@ -13,17 +13,24 @@ body:
   validations:
     required: true
 - type: textarea
-  id: what
+  id: goal
   attributes:
-    label: The story
-    description: The use case, told as the steps a person takes.
+    label: What the person wants to do
+    description: Say it the way they would.
   validations:
     required: true
 - type: textarea
-  id: evidence
+  id: walk
   attributes:
-    label: Evidence of completion
-    description: What a comment on this issue will show before it closes.
+    label: How to walk through it
+    description: The steps, and what you should see. Use it for a demo or a quick test.
+  validations:
+    required: true
+- type: textarea
+  id: features
+  attributes:
+    label: The features it uses
+    description: List each one by its issue.
   validations:
     required: true
 - type: textarea
