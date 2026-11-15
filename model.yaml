@@ -267,7 +267,8 @@ labels:
         name: question
   teams: {}
 projects:
-  - fields:
+  - copy_short_description: '{owner}''s Schedule project: its committed tasks and bugs'
+    fields:
       - id: PVTSSF_lADOAD1Dfc4BpxN-zhoLRh0
         name: Status
         options:
@@ -350,7 +351,8 @@ projects:
         number: 2
         sort_by: []
         vertical_group_by: []
-  - fields:
+  - copy_short_description: '{owner}''s Scenario project: its Scenario issues and the tasks and bugs found while walking them'
+    fields:
       - id: PVTSSF_lADOAD1Dfc4BpxOBzhoLRlI
         name: Status
         options:
@@ -383,10 +385,10 @@ projects:
     number: 8
     public: false
     readme: |-
-      A team's Scenario project holds its features.
+      A team's Scenario project holds its Scenario issues, and the tasks and bugs found while walking each one.
 
-      - The Scenario field names the scenario each row belongs to: one option per scenario, named for its Scenario issue, which tells the story.
-      - Beat orders the rows within a scenario.
+      - The Scenario field names the scenario each row belongs to: one option per scenario, named for its Scenario issue.
+      - Beat is the point in the walk where a task or bug turned up, and it orders the rows within a scenario.
       - Status is Open, In progress or Closed.
     repositories: []
     short_description: 'The organization''s Scenario template: copy it to make a team''s Scenario project'
@@ -421,7 +423,8 @@ projects:
         number: 2
         sort_by: []
         vertical_group_by: []
-  - fields:
+  - copy_short_description: '{owner}''s Triage project: the team''s queue of issues waiting to be classified.'
+    fields:
       - id: PVTSSF_lADOAD1Dfc4Bp9W_zhoWkdA
         name: Status
         options:
@@ -487,7 +490,8 @@ projects:
         number: 2
         sort_by: []
         vertical_group_by: []
-  - fields:
+  - copy_short_description: '{owner}''s Backlog project: its accepted work not yet scheduled'
+    fields:
       - id: PVTSSF_lADOAD1Dfc4BqFiLzhoeMv8
         name: Status
         options:
