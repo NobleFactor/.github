@@ -340,7 +340,6 @@ projects:
           - Assignees
           - Status
           - Linked pull requests
-          - Sub-issues progress
           - Step
           - Worktree
         filter: ""
