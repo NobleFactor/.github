@@ -348,7 +348,9 @@ projects:
         layout: table
         name: By schedule
         number: 2
-        sort_by: []
+        sort_by:
+          - direction: asc
+            field: Step
         vertical_group_by: []
   - copy_short_description: '{owner}''s Scenario project: its Scenario issues and the tasks and bugs found while walking them'
     fields:
@@ -468,11 +470,11 @@ projects:
           - Linked pull requests
           - Sub-issues progress
           - Area
-        filter: ""
+        filter: no:area
         group_by: []
         layout: table
-        name: View 1
-        number: 1
+        name: Missing Area
+        number: 2
         sort_by: []
         vertical_group_by: []
       - fields:
@@ -482,11 +484,11 @@ projects:
           - Linked pull requests
           - Sub-issues progress
           - Area
-        filter: no:area
+        filter: ""
         group_by: []
         layout: table
-        name: Missing Area
-        number: 2
+        name: Default
+        number: 3
         sort_by: []
         vertical_group_by: []
   - copy_short_description: '{owner}''s Backlog project: its accepted work not yet scheduled'
@@ -517,7 +519,7 @@ projects:
     number: 24
     public: false
     readme: |-
-      A team's Backlog project holds work that triage accepted and that isn't scheduled yet, ordered by priority.
+      A team's Backlog project holds work that triage accepted and that isn't scheduled yet, ordered by priority, and its epics and features, each until it closes.
 
       - Status is Open, In progress or Closed.
     repositories: []
@@ -532,12 +534,14 @@ projects:
           - Linked pull requests
           - Sub-issues progress
           - Priority
-        filter: ""
+        filter: type:Task,Bug
         group_by: []
         layout: table
-        name: View 1
-        number: 1
-        sort_by: []
+        name: By priority
+        number: 2
+        sort_by:
+          - direction: asc
+            field: Priority
         vertical_group_by: []
       - fields:
           - Title
@@ -549,11 +553,23 @@ projects:
         filter: ""
         group_by: []
         layout: table
-        name: By priority
-        number: 2
-        sort_by:
-          - direction: asc
-            field: Priority
+        name: Default
+        number: 3
+        sort_by: []
+        vertical_group_by: []
+      - fields:
+          - Title
+          - Assignees
+          - Status
+          - Linked pull requests
+          - Sub-issues progress
+          - Priority
+        filter: type:Epic,Feature
+        group_by: []
+        layout: table
+        name: Epics and features
+        number: 4
+        sort_by: []
         vertical_group_by: []
 teams:
   - description: 'DevLore: the devlore product; owns devlore-cli, devlore-registry and devlore.noblefactor.com'
@@ -614,7 +630,7 @@ types:
       - Priority
       - Effort
     unplanned: true
-  - color: gray
+  - color: blue
     description: 'Level 1: a capability for the product or for engineering; decomposes into tasks and bugs'
     enabled: true
     id: 344350
@@ -625,7 +641,7 @@ types:
       - Start date
       - Target date
       - Effort
-  - color: gray
+  - color: purple
     description: 'Level 0: a body of work with an owner, the root work issues roll up to; decomposes into features'
     enabled: true
     id: 914457658
