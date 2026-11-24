@@ -12,5 +12,6 @@ repository's New workflow page. It also holds the organization's issue model.
 | `SUPPORT.md` | Where to ask a question or report a problem |
 | `.github/ISSUE_TEMPLATE/` | The issue forms, one for each issue type |
 | `.github/pull_request_template.md` | The description every pull request starts from |
-| `workflow-templates/` | The Triage workflow template |
+| `workflow-templates/` | The workflow templates: Triage, and the daily credentials check with its script and permissions file. Their source is noblefactor-engprod's `workflow-templates/`, and each participating repository lands a copy (noblefactor-engprod#613) |
+| `.github/workflows/triage.yml`, `credentials-check.yml` and `.github/credentials-check/` | This repository's own Triage and daily credentials check, copies of the templates |
 | `.github/workflows/quality-gate.yml` | This repository's own check: every YAML and JSON file parses |
